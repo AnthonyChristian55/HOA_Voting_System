@@ -1,0 +1,108 @@
+/* Auto-adjusting print styles */
+@page {
+    size: auto;
+    /* Let the printer/browser determine paper size */
+    margin: 5mm;
+    /* Small safe margin to prevent clipping */
+}
+
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif;
+    font-size: 14px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-sizing: border-box;
+    width: 100% !important;
+}
+
+.container {
+    max-width: 90% !important;
+    /* Use percentage for flexible sizing */
+    width: auto !important;
+    padding: 0.5cm !important;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto !important;
+}
+
+/* Content scaling */
+h2 {
+    font-size: calc(12px + 0.5vw) !important;
+    /* Responsive font size */
+    margin: 0.2cm 0 !important;
+    font-weight: bold;
+}
+
+p,
+li {
+    font-size: calc(10px + 0.5vw) !important;
+    /* Responsive font size */
+    margin: 0.2cm 0 !important;
+    line-height: 1.3;
+}
+
+/* List styling */
+.centered-list {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.5em !important;
+    /* Use em units for better scaling */
+    margin: 0.2cm auto !important;
+    display: inline-block;
+    text-align: left;
+}
+
+li {
+    margin-bottom: 0.15cm !important;
+    line-height: 1.3;
+}
+
+@media print {
+
+    /* Print-specific optimizations */
+    body * {
+        visibility: hidden;
+    }
+
+    .container,
+    .container * {
+        visibility: visible;
+    }
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90% !important;
+        max-width: none !important;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+    }
+
+    /* Remove any unwanted spacing */
+    .container:first-of-type {
+        border-bottom: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Force colors to print */
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

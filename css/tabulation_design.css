@@ -1,0 +1,227 @@
+/* tabulation.css */
+.tabulation-container {
+    max-width: 975px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tabulation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tabulation-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.tabulation-section h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.tabulation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 15px;
+}
+
+.tabulation-table th {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabulation-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tabulation-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabulation-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.candidate-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    display: block;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
+
+.top-candidates .tabulation-table tr {
+    background-color: #fffacd;
+}
+
+.top-candidates .tabulation-table tr:hover {
+    background-color: #ffe680;
+}
+
+.action-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-print {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-print:hover {
+    background-color: #2980b9;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #3498db;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination span {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+}
+
+.back-btn {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .tabulation-container {
+        padding: 15px;
+    }
+
+    .tabulation-section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tabulation-container {
+        padding: 10px;
+    }
+
+    .tabulation-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tabulation-section {
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95%;
+    }
+
+    .tabulation-table {
+        width: 100%;
+        display: table;
+    }
+
+    .tabulation-table th,
+    .tabulation-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .candidate-photo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn {
+        margin-right: 0;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .tabulation-table th,
+    .tabulation-table td {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    .candidate-photo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination a,
+    .pagination span {
+        padding: 6px 12px;
+        margin: 2px;
+    }
+}

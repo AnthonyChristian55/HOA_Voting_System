@@ -1,0 +1,82 @@
+@media print {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 1cm;
+    }
+
+    /* Hide buttons and navigation when printing */
+    button,
+    .pagination,
+    .dashboard-container>a {
+        display: none;
+    }
+
+    /* General table styling for print */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 2cm;
+        page-break-after: auto;
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    /* Specific styling for vote tabulation table */
+    #voteTabulation {
+        margin-top: 1cm;
+    }
+
+    /* Specific styling for top candidates table */
+    #topCandidates tr {
+        background-color: #ffd700 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Signature line styling */
+    .signature-container {
+        margin-top: 2cm;
+        width: 100%;
+        text-align: center;
+    }
+
+    .signature-line {
+        display: inline-block;
+        width: 30%;
+        border-top: 1px solid #000;
+        padding-top: 5px;
+        margin: 0 5px;
+    }
+
+    .signature-name {
+        display: inline-block;
+        width: 30%;
+        margin-top: 5px;
+    }
+
+    .signature-row {
+        margin-bottom: 1cm;
+        text-align: center;
+        width: 100%;
+    }
+
+    .signature-note {
+        font-size: smaller;
+        margin-top: 3px;
+    }
+
+    /* Page break control */
+    @page {
+        size: auto;
+        margin: 1cm;
+    }
+}
